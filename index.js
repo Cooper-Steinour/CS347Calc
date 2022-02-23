@@ -1,10 +1,34 @@
-var numOne = document.getElementById('num-one');
-var numTwo = document.getElementById('num-two');
-var addSum = document.getElementById('add-sum');
-numOne.addEventListener('input', add);
-numTwo.addEventListener('input', add);
-function add() {
-var one = parseFloat(numOne.value) || 0;
-var two = parseFloat(numTwo.value) || 0;
-addSum.innerText = one+two;
+let numOne = document.getElementById("num-one");
+let numTwo = document.getElementById("num-two");
+let symbol = document.getElementById("symbol");
+let sum = document.getElementById("sum");
+
+numOne.addEventListener("input", calculate);
+numTwo.addEventListener("input", calculate);
+
+function calculate() {
+  let one = parseFloat(numOne.value) || 0;
+  let two = parseFloat(numTwo.value) || 0;
+  switch (symbol.innerText) {
+    case "*":
+      sum.innerText = one * two;
+      break;
+    case "/":
+      sum.innerText = one / two;
+      break;
+    case "+":
+      sum.innerText = one + two;
+      break;
+    case "-":
+      sum.innerText = one - two;
+      break;
+    default:
+      sum.innerText = "Choose an operator";
+      break;
+  }
+}
+
+function changeOperator(operator) {
+  symbol.innerText = operator;
+  calculate();
 }

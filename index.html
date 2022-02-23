@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <link href="/index.css" rel="stylesheet" type="text/css" />
     <meta charset="UTF-8" />
-    <title>Simple Addition Calculator</title>
+    <title>Simple Calculator</title>
   </head>
-  <body>
-    <h1>Addition Calculator</h1>
+  <body class="center">
+    <h1>Calculator</h1>
     <div>
-      <input type="text" id="num-one" /> + <input type="text" id="num-two" />
+      <input type="text" id="num-one" />
+      <p id="symbol"></p>
+      <input type="text" id="num-two" />
     </div>
-    <h2 id="add-sum"></h2>
+    <br />
+    <button id="add" onclick="changeOperator('+')">+</button>
+    <button id="minus" onclick="changeOperator('-')">-</button>
+    <button id="multiply" onclick="changeOperator('*')">*</button>
+    <button id="divide" onclick="changeOperator('/')">/</button>
+    <h2 class="center" id="sum">Choose an operator</h2>
   </body>
   <script src="index.js"></script>
 </html>
